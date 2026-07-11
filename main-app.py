@@ -6,8 +6,11 @@ def getTwoNumbers():
     b = float(input("second number? "))
     return a, b
 
+def getOneNumber():
+    a = float(input("first number?"))
+    return a
 
-def displayResult(x: float):
+def displayResult(x):
     print(x, "\n")
 
 
@@ -19,6 +22,18 @@ def performCalcLoop(calc):
         elif choice == 'add':
             a, b = getTwoNumbers()
             displayResult(calc.add(a, b))
+        elif choice == "sub":
+            a, b = getTwoNumbers()
+            displayResult(calc.sub(a, b))
+        elif choice == "mult":
+            a, b = getTwoNumbers()
+            displayResult(calc.mult(a, b))
+        elif choice == "square":
+            a, b = getTwoNumbers()
+            displayResult(calc.square(a,b))
+        elif choice == "squareroot":
+            a = getOneNumber()
+            displayResult(calc.squareroot(a))   
         else:
             print("That is not a valid input.")
 

@@ -91,3 +91,5 @@ The following functions should take the displayed value (x) and updated it accor
 ## Submission
 
 Completed projects should be submitted by submitting a pull request against the [original repository](https://git.zipcode.rocks/Cohort4.2/ZCW-MacroLabs-OOP-ScientificCalculator). All work should be done in your own repository.
+
+sloane was here
