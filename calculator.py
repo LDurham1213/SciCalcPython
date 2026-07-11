@@ -12,17 +12,22 @@ class Calculator:
         return self.display
 
     def add(self, x, y):
-        return x + y
+        self.display = x + y
+        return self.display
 
     def sub(self, x, y):
-        return x - y
+        self.display = x - y
+        return self.display
     
     def multiply(self, x, y):
-        return x * y
+        self.display = x * y
+        return self.display
     
     def square(self, x,):
-        return x ** 2
+        self.display = x ** 2
+        return self.display
     
     def squareroot(self, x):
-        return x ** 0.5
+        self.display = x ** 0.5
+        return self.display
     
