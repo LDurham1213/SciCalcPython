@@ -1,7 +1,11 @@
+import math
+from typing import Union
+Number = Union[int,float]
+
 class Calculator:
 
     def __init__(self):
-        pass
+        self.display = 0
 
     def add(self, x, y):
         return x + y
