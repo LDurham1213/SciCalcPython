@@ -13,7 +13,6 @@ def getOneNumber():
 def displayResult(x: float):
     print(x, "\n")
 
-
 def performCalcLoop(calc):
     while True:
         choice = input("Operation? ")
@@ -22,6 +21,18 @@ def performCalcLoop(calc):
         elif choice == 'add':
             a, b = getTwoNumbers()
             displayResult(calc.add(a, b))
+        elif choice == "sub":
+            a, b = getTwoNumbers()
+            displayResult(calc.sub(a, b))
+        elif choice == "multiply":
+            a, b = getTwoNumbers()
+            displayResult(calc.multiply(a, b))
+        elif choice == "square":
+            a = getOneNumber()
+            displayResult(calc.square(a))
+        elif choice == "squareroot":
+            a = getOneNumber()
+            displayResult(calc.squareroot(a))
         elif choice == "display":
             current_val = calc.get_display()
             print(f"Current Display: {current_val}\n")

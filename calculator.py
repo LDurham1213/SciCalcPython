@@ -23,7 +23,7 @@ class Calculator:
         self.display = x * y
         return self.display
     
-    def square(self, x,):
+    def square(self, x):
         self.display = x ** 2
         return self.display
     
