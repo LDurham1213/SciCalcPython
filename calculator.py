@@ -18,6 +18,9 @@ class Calculator:
     def squareroot(self, x, y=2):
         return x ** (1/y)
     
+    def clear(self)
+        self.status = "OK"
+    
 
         
 

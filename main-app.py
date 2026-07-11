@@ -6,7 +6,7 @@ def getTwoNumbers():
     b = float(input("second number? "))
     return a, b
 
-def getOneNumber()
+def getOneNumber():
     a = float(input("first number?"))
     return a
 
@@ -29,7 +29,7 @@ def performCalcLoop(calc):
             a, b = getTwoNumbers()
             displayResult(calc.mult(a, b))
         elif choice == "square":
-            a, b = GetTwoNumbers()
+            a, b = getTwoNumbers()
             displayResult(calc.square(a,b))
         elif choice == "squareroot":
             a = getOneNumber()
