@@ -12,7 +12,7 @@ class Calculator:
     def mult(self, x, y):
         return x * y
     
-    def square(self, x, y):
+    def power(self, x, y):
         return x ** y
     
     def squareroot(self, x, y=2):

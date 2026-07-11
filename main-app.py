@@ -28,9 +28,9 @@ def performCalcLoop(calc):
         elif choice == "mult":
             a, b = getTwoNumbers()
             displayResult(calc.mult(a, b))
-        elif choice == "square":
+        elif choice == "power":
             a, b = getTwoNumbers()
-            displayResult(calc.square(a,b))
+            displayResult(calc.power(a,b))
         elif choice == "squareroot":
             a = getOneNumber()
             displayResult(calc.squareroot(a))   
