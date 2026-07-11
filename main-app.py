@@ -22,6 +22,9 @@ def performCalcLoop(calc):
         elif choice == 'add':
             a, b = getTwoNumbers()
             displayResult(calc.add(a, b))
+        elif choice == "display":
+            current_val = calc.get_display()
+            print(f"Current Display: {current_val}\n")
         else:
             print("That is not a valid input.")
 

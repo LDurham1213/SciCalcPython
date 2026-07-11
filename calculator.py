@@ -8,6 +8,9 @@ class Calculator:
     def __init__(self):
         self.display = 0
 
+    def get_display(self):
+        return self.display
+
     def add(self, x, y):
         return x + y
 
@@ -23,10 +26,3 @@ class Calculator:
     def squareroot(self, x):
         return x ** 0.5
     
-    
-
-    
-
-        
-
-# add lots more methods to this calculator class.
