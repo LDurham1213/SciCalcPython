@@ -3,7 +3,7 @@ from typing import Union
 Number = Union[int,float]
 
 class Calculator:
-
+#status set here
     def __init__(self):
         self.display = 0
 
