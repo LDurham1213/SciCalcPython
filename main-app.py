@@ -36,6 +36,9 @@ def performCalcLoop(calc):
         elif choice == "display":
             current_val = calc.get_display()
             print(f"Current Display: {current_val}\n")
+        elif choice == "clear":
+            calc.clear()
+            print("Display cleared. \n")
         else:
             print("That is not a valid input.")
 

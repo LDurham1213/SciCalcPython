@@ -31,3 +31,7 @@ class Calculator:
         self.display = x ** 0.5
         return self.display
     
+    def clear(self):
+        self.display = 0
+        return self.display
+    
