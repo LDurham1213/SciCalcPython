@@ -1,7 +1,12 @@
-class Calculator:
+import math
+from typing import Union
 
+Number = Union[int,float]
+
+class Calculator:
+#status set here
     def __init__(self):
-        pass
+        self.display = 0
 
     def add(self, x, y):
         return x + y
@@ -9,14 +14,16 @@ class Calculator:
     def sub(self, x, y):
         return x - y
     
-    def mult(self, x, y):
+    def multiply(self, x, y):
         return x * y
     
-    def power(self, x, y):
-        return x ** y
+    def square(self, x,):
+        return x ** 2
     
-    def squareroot(self, x, y=2):
-        return x ** (1/y)
+    def squareroot(self, x):
+        return x ** 0.5
+    
+    
 
     
 
