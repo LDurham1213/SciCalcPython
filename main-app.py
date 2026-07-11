@@ -19,6 +19,9 @@ def performCalcLoop(calc):
         elif choice == 'add':
             a, b = getTwoNumbers()
             displayResult(calc.add(a, b))
+        elif choice == "sub":
+            a, b = getTwoNumbers()
+            displayResult(calc.sub(a, b))  
         else:
             print("That is not a valid input.")
 
