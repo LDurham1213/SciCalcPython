@@ -12,6 +12,7 @@ class Calculator:
         return self.display
 
     def add(self, x, y):
+        if self.display ==
         self.display = x + y
         return self.display
 
