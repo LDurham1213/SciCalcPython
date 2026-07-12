@@ -69,7 +69,7 @@ class Calculator:
 #---------------
 #Memory methods
 #---------------
-    def memoryAdd(self):   #M+
+    def memory_add(self):   #M+
         """
         Add the current display value to memory.
         Update both memory and the display.
@@ -85,7 +85,7 @@ class Calculator:
         self.display = self.memory
         return self.display
     
-    def memoryClear(self):    #MC
+    def memory_clear(self):    #MC
         """
         Reset memory to zero.
         Leave the current display unchanged.
@@ -97,7 +97,7 @@ class Calculator:
         self.memory = 0
         return self.display
     
-    def memoryRecall(self):     # MRC
+    def memory_recall(self):     # MRC
         """
         Copy the stored memory value to the display.
         """
@@ -108,7 +108,7 @@ class Calculator:
 
         return self.display
     
-    def memoryStore(self):
+    def memory_store(self):
         """
         Store the current display value in memory.
         Leave the display unchanged.
@@ -238,7 +238,7 @@ class Calculator:
 
         return self.getDisplay()
     
-    def switchSign(self):
+    def switch_sign(self):
         if self.hasError():
             return self.error
         
@@ -252,7 +252,7 @@ class Calculator:
 #---------------
 # Utility functions
 #---------------
-    def absoluteValue(self):
+    def absolute_value(self):
         if self.hasError():
             return self.error
         

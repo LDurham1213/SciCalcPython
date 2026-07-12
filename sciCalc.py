@@ -32,14 +32,14 @@ class SciCalc(Calculator):
         self.display = math.log10(self.display)
         return self.display
     
-    def inversLog(self):
+    def inverse_log(self):
         if self.hasError():
             return self.error
         
         self.display = 10 ** self.display
         return self.display
     
-    def natruallLog(self):
+    def natural_log(self):
         if self.hasError():
             return self.error
         
@@ -50,8 +50,52 @@ class SciCalc(Calculator):
         self.display = math.log(self.display)
         return self.display
     
-    def inverseNaturalLog(self):
+    def inverse_natural_log(self):
         if self.hasError():
             return self.error
         self.display = math.exp(self.display)
         return self.display
+    
+#----------------
+# Custom features
+#----------------
+
+# Tip Function
+    def tip_calculator(self, billAmount, tipPercent):
+        if self.hasError():
+            return self.error
+        
+        if not self.isValidNumber(billAmount) or not self.isValidNumber(tipPercent):
+            self.error = self.INVALID_INPUT_ERROR
+            return self.error
+        
+        if billAmount < 0 or tipPercent < 0:
+            self.error = "Amounts cannot be negative"
+            return self.error
+        
+        tip = billAmount * (tipPercent /100)
+        self.display = billAmount + tip
+
+        return self.display
+    
+    # Convert temp
+    def temp_convert(self, temperature, conversion):
+        if self.hasError():
+            return self.error
+        
+        if not self.isValidNumber(temperature):
+            self.error = self.INVALID_INPUT_ERROR
+            return self.error
+        
+        conversion = conversion.upper()
+
+        if conversion == "C":
+            self.display = (temperature - 32) * 5 / 9
+
+        elif conversion == "F":
+            self.display = (temperature * 9 / 5) + 32
+
+        else:
+            self.error = "Use C or F"
+
+        return self.getDisplay()

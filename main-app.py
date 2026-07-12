@@ -47,6 +47,8 @@ def displayMenu():
     print("  m+          - Add display to memory")
     print("  mc          - Clear memory")
     print("  mrc         - Recall memory")
+    print("  tip         - Calculate a tip")
+    print("  temp        - Convert temperature")
     print("  clear       - Reset the display to 0")
     print("  show        - Show the current display")
     print("  help        - Show the available operations")
@@ -108,13 +110,13 @@ def performCalcLoop(calc):
             number = getNumber("Number? ")
 
             calc.setDisplay(number)
-            displayResult(calc.switchSign())
+            displayResult(calc.switch_sign())
 
         elif choice == "absolute":
             number = getNumber("Number? ")
 
             calc.setDisplay(number)
-            displayResult(calc.absoluteValue())
+            displayResult(calc.absolute_value())
         
         elif choice == "percentage":
             number = getNumber("Number? ")
@@ -135,29 +137,39 @@ def performCalcLoop(calc):
         elif choice == "invlog":
             number = getNumber("Number? ")
             calc.setDisplay(number)
-            displayResult(calc.inverseLog())
+            displayResult(calc.inverse_log())
 
         elif choice == "nl":
             number = getNumber("Number? ")
             calc.setDisplay(number)
-            displayResult(calc.naturalLog())
+            displayResult(calc.natural_log())
 
         elif choice == "exp":
             number = getNumber("Number? ")
             calc.setDisplay(number)
-            displayResult(calc.inverseNaturalLog())
+            displayResult(calc.inverse_natural_log())
+
+        elif choice == "tip":
+            bill = getNumber("Bill Amount? ")
+            percent = getNumber("Tip Percentage? ")
+            displayResult(calc.tip_calculator(bill, percent))
+
+        elif choice == "temp":
+            temperature = getNumber("Temperature? ")
+            conversion = input("Convert to (C/F)? ")
+            displayResult(calc.temperature_converter(temperature, conversion))
 
         elif choice == "ms":
-            displayResult(calc.memoryStory())
+            displayResult(calc.memory_story())
 
         elif choice == "m+":
-            displayResult(calc.memoryAdd())
+            displayResult(calc.memory_add())
 
         elif choice == "mc":
-            displayResult(calc.memoryClear())
+            displayResult(calc.memory_clear())
 
         elif choice == "mrc":
-            displayResult(calc.memoryRecall())
+            displayResult(calc.memory_recall())
 
         elif choice == "clear":
             displayResult(calc.clear())
