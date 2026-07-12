@@ -1,3 +1,5 @@
+import math
+
 from calculator import Calculator
 
 
@@ -36,13 +38,16 @@ def displayMenu():
     print("  power       - Raise the display to an exponent")
     print("  inverse     - Calculate 1 dividend by the display")
     print("  sign        - Switch the display between positive and negative")
+    # custom functions
     print("  absolute    - Calculate the absolute value")
     print("  percentage  - Divide the display by 100")
     print("  clear       - Reset the display to 0")
     print("  show        - Show the current display")
     print("  help        - Show the available operations")
     print("  q           - Quit")
-    print()
+    # scientific functions
+    print("  mode        - Switch trig units between Degrees and Radians")
+    print("  sine        - Calculate the sine of the number on display")
     
 def performCalcLoop(calc):
     displayMenu()
@@ -109,6 +114,8 @@ def performCalcLoop(calc):
             calc.setDisplay(number)
             displayResult(calc.switchSign())
 
+        # custom functions
+
         elif choice == "absolute":
             number = getNumber("Number? ")
 
@@ -121,11 +128,25 @@ def performCalcLoop(calc):
             calc.setDisplay(number)
             displayResult(calc.percentage())
 
+        # scientific functions
+
+        elif choice == "mode":
+            new_mode = calc.switchUnitsMode()
+            print(f"Trig unit mode changed to: {new_mode}")
+            print()
+       
+        elif choice == "sine":
+            displayResult(calc.sine())
+
+        # other functions
+
         elif choice == "clear":
             displayResult(calc.clear())
+            print(f"[ Mode: {calc.getTrigMode()} ]\n")
 
         elif choice == "show":
             displayResult(calc.getDisplay())
+            print(f"[ Mode: {calc.getTrigMode()} ]\n")
 
         elif choice == "help":
             displayMenu()

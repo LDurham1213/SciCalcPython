@@ -1,9 +1,12 @@
+import math
+
 class Calculator:
     ERROR = "Err"
 
 #status set here
     def __init__(self):
         self.display = 0
+        self.trig_mode = "Radians"
 
     def getDisplay(self):
         return self.display
@@ -114,6 +117,39 @@ class Calculator:
             self.display = self.ERROR
 
         return self.display
+
+#Scientific Functions
+
+
+# to switch between degrees and radians
+    def getTrigMode(self):
+        return self.trig_mode
+    
+    def switchUnitsMode(self, mode=None):
+        if self.hasError():
+            return self.trig_mode
+        
+        if mode in {"Degrees", "Radians"}:
+            self.trig_mode = mode
+        else:
+            self.trig_mode = "Degrees" if self.trig_mode == "Radians" else "Radians"
+        
+        return self.trig_mode
+
+    def sine(self):
+        if self.hasError():
+            return self.display
+        try: #needs to be a float
+            val = float(self.display)
+            if self.trig_mode == "Degrees":
+                val = math.radians(val)
+
+            result = math.sin(val)
+            
+        except (TypeError, ValueError, OverflowError):
+            self.display = self.ERROR
+        return self.display
+
 
 #Custom features
     def absoluteValue(self):
