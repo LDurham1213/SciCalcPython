@@ -48,6 +48,9 @@ def displayMenu():
     # scientific functions
     print("  mode        - Switch trig units between Degrees and Radians")
     print("  sine        - Calculate the sine of the number on display")
+    print("  cosine      - Calculate the cosine of the number on display")
+    print("  tangent     - Calculate the tangent of the number on display")
+    
     
 def performCalcLoop(calc):
     displayMenu()
@@ -139,6 +142,16 @@ def performCalcLoop(calc):
             number = getNumber("Number? ")
             calc.setDisplay(number)
             displayResult(calc.sine())
+
+        elif choice == "cosine":
+            number = getNumber("Number? ")
+            calc.setDisplay(number)
+            displayResult(calc.cosine())
+
+        elif choice == "tangent":
+            number = getNumber("Number? ")
+            calc.setDisplay(number)
+            displayResult(calc.tangent())
 
         # other functions
 

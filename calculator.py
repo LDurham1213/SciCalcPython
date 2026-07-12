@@ -150,6 +150,38 @@ class Calculator:
         except (TypeError, ValueError, OverflowError):
             self.display = self.ERROR
         return self.display
+    
+    def cosine(self):
+        if self.hasError():
+            return self.display
+        try: #needs to be a float
+            val = float(self.display)
+            if self.trig_mode == "Degrees":
+                val = math.radians(val)
+
+            result = math.cos(val)
+
+            self.display = 0.0 if abs(result) < 1e-15 else result
+        except (TypeError, ValueError, OverflowError):
+            self.display = self.ERROR
+        return self.display
+    
+    def tangent(self):
+        if self.hasError():
+            return self.display
+        try: #needs to be a float
+            val = float(self.display)
+            if self.trig_mode == "Degrees":
+                val = math.radians(val)
+
+            result = math.tan(val)
+
+            self.display = 0.0 if abs(result) < 1e-15 else result #decimal places
+        except (TypeError, ValueError, OverflowError):
+            self.display = self.ERROR
+        return self.display
+
+
 
 
 #Custom features
