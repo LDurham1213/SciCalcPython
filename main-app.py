@@ -2,7 +2,6 @@ import math
 
 from calculator import Calculator
 
-
 def getNumber(message):
 #ask the user for one number.
 #keep asking until the user enters a valid int or dec.
