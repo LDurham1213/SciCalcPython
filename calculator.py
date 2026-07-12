@@ -145,7 +145,8 @@ class Calculator:
                 val = math.radians(val)
 
             result = math.sin(val)
-            
+
+            self.display = 0.0 if abs(result) < 1e-15 else result
         except (TypeError, ValueError, OverflowError):
             self.display = self.ERROR
         return self.display

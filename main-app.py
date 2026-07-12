@@ -136,6 +136,8 @@ def performCalcLoop(calc):
             print()
        
         elif choice == "sine":
+            number = getNumber("Number? ")
+            calc.setDisplay(number)
             displayResult(calc.sine())
 
         # other functions
