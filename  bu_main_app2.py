@@ -11,15 +11,9 @@ def getNumber(message):
             print("Please enter a valid number.")
 
 def getTwoNumbers():
-    while True:
-        try:
-            a = float(input("first number? "))
-            b = float(input("second number? "))
-            return a, b
-    
-        except ValueError:
-            print("Error: Please enter valid numbers")
-            print()
+    a = float(input("first number? "))
+    b = float(input("second number? "))
+    return a, b
 
 def displayResult(result):
     print("Display:", result)
@@ -38,15 +32,6 @@ def displayMenu():
     print("  sign        - Switch the display between positive and negative")
     print("  absolute    - Calculate the absolute value")
     print("  percentage  - Divide the display by 100")
-    print("  factorial   - Calculate factorial")
-    print("  log         - Base 10 logarithm")
-    print("  invlog      - 10 raised to the display number")
-    print("  nl          - Natural Logarithm")
-    print("  exp         - e raised to the display number")
-    print("  ms          - Store memory")
-    print("  m+          - Add display to memory")
-    print("  mc          - Clear memory")
-    print("  mrc         - Recall memory")
     print("  clear       - Reset the display to 0")
     print("  show        - Show the current display")
     print("  help        - Show the available operations")
@@ -121,43 +106,6 @@ def performCalcLoop(calc):
 
             calc.setDisplay(number)
             displayResult(calc.percentage())
-
-        elif choice == "factorial":
-            number = getNumber("Number? ")
-            calc.setDisplay(number)
-            displayResult(calc.factorial())
-
-        elif choice == "log":
-            number = getNumber("Number? ")
-            calc.setDisplay(number)
-            displayResult(calc.log())
-
-        elif choice == "invlog":
-            number = getNumber("Number? ")
-            calc.setDisplay(number)
-            displayResult(calc.inverseLog())
-
-        elif choice == "nl":
-            number = getNumber("Number? ")
-            calc.setDisplay(number)
-            displayResult(calc.naturalLog())
-
-        elif choice == "exp":
-            number = getNumber("Number? ")
-            calc.setDisplay(number)
-            displayResult(calc.inverseNaturalLog())
-
-        elif choice == "ms":
-            displayResult(calc.memoryStory())
-
-        elif choice == "m+":
-            displayResult(calc.memoryAdd())
-
-        elif choice == "mc":
-            displayResult(calc.memoryClear())
-
-        elif choice == "mrc":
-            displayResult(calc.memoryRecall())
 
         elif choice == "clear":
             displayResult(calc.clear())
