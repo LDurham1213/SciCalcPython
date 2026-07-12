@@ -180,9 +180,54 @@ class Calculator:
         except (TypeError, ValueError, OverflowError):
             self.display = self.ERROR
         return self.display
+    
+    def inverse_sine(self):
+        if self.hasError():
+            return self.display
+        try:
+            val = float(self.display)
 
+            result = math.asin(val) #value error if not between -1 and 1
 
+            if self.trig_mode == "Degrees": #convert radians back to degrees
+                result = math.degrees(result)
 
+            self.display = 0.0 if abs(result) < 1e-15 else result
+        except (TypeError, ValueError, OverflowError):
+            self.display = self.ERROR
+        return self.display
+    
+    def inverse_cosine(self):
+        if self.hasError():
+            return self.display
+        try:
+            val = float(self.display)
+
+            result = math.acos(val) #value error if not between -1 and 1
+
+            if self.trig_mode == "Degrees": #convert radians back to degrees
+                result = math.degrees(result)
+
+            self.display = 0.0 if abs(result) < 1e-15 else result
+        except (TypeError, ValueError, OverflowError):
+            self.display = self.ERROR
+        return self.display
+    
+    def inverse_tangent(self):
+        if self.hasError():
+            return self.display
+        try:
+            val = float(self.display)
+
+            result = math.atan(val) #value error if not between -1 and 1
+
+            if self.trig_mode == "Degrees": #convert radians back to degrees
+                result = math.degrees(result)
+
+            self.display = 0.0 if abs(result) < 1e-15 else result
+        except (TypeError, ValueError, OverflowError):
+            self.display = self.ERROR
+        return self.display
 
 #Custom features
     def absoluteValue(self):

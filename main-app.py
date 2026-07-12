@@ -50,8 +50,12 @@ def displayMenu():
     print("  sine        - Calculate the sine of the number on display")
     print("  cosine      - Calculate the cosine of the number on display")
     print("  tangent     - Calculate the tangent of the number on display")
-    
-    
+    print("  asine       - Calculate the inverse sine of the number on display")
+    print("  acosine     - Calculate the inverse cosine of the number on display")
+    print("  atangent    - Calculate the inverse tangent of the number on display")
+
+
+
 def performCalcLoop(calc):
     displayMenu()
 
@@ -152,6 +156,21 @@ def performCalcLoop(calc):
             number = getNumber("Number? ")
             calc.setDisplay(number)
             displayResult(calc.tangent())
+
+        elif choice == "asine":
+            number = getNumber("Number (between -1 and 1)? ")
+            calc.setDisplay(number)
+            displayResult(calc.inverse_sine())
+
+        elif choice == "acosine":
+            number = getNumber("Number (between -1 and 1)? ")
+            calc.setDisplay(number)
+            displayResult(calc.inverse_cosine())
+
+        elif choice == "atangent":
+            number = getNumber("Number (between -1 and 1)? ")
+            calc.setDisplay(number)
+            displayResult(calc.inverse_tangent())
 
         # other functions
 
