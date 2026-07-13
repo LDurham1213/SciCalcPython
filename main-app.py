@@ -30,7 +30,9 @@ def displayResult(result):
     print()
     
 def displayMenu():
-    print("Available operations:")
+    print("-------------------------------")
+    print("WELCOME TO I.B.M CALCULATOR:")
+    print("Select a function")
     print("-------------------------------")
     print("  set         - Put a number on the display")
     print("  add         - Add a number to the display")

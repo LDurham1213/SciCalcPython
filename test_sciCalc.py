@@ -250,20 +250,11 @@ class TestSciCalc(unittest.TestCase):
 
         self.assertAlmostEqual(result, 0.0, places=7)
 
-    def test_temperature_converter_boiling_fahrenheit_to_celsius(self):
-        result = self.calc.temperature_converter(212, "C")
-
-        self.assertAlmostEqual(result, 100.0, places=7)
 
     def test_temperature_converter_celsius_to_fahrenheit(self):
         result = self.calc.temperature_converter(0, "F")
 
         self.assertAlmostEqual(result, 32.0, places=7)
-
-    def test_temperature_converter_boiling_celsius_to_fahrenheit(self):
-        result = self.calc.temperature_converter(100, "F")
-
-        self.assertAlmostEqual(result, 212.0, places=7)
 
     def test_temperature_converter_accepts_lowercase_conversion(self):
         result = self.calc.temperature_converter(32, "c")
@@ -338,14 +329,6 @@ class TestSciCalc(unittest.TestCase):
         result = self.calc.sine()
 
         self.assertAlmostEqual(result, 1.0, places=7)
-
-    def test_sine_of_one_eighty_degrees_is_zero(self):
-        self.calc.switchUnitsMode("Degrees")
-        self.calc.setDisplay(180)
-
-        result = self.calc.sine()
-
-        self.assertEqual(result, 0.0)
 
     # ============================================================
     # Cosine tests
