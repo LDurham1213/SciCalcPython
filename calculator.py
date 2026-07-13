@@ -4,15 +4,16 @@ class Calculator:
     INVALID_INPUT_ERROR = "Invalid input"
     DIVIDE_BY_ZERO_ERROR = "Cannot divide by zero"
     OVERFLOW_ERROR = "Number too large"
-    INVALID_EXPONENT_ERROR = "Invalid expoent"
+    INVALID_EXPONENT_ERROR = "Invalid exponent"
     INVALID_OPERATION_ERROR = "Invalid operation"
  ##   ERROR = "Err"-------
 
 #status set here
     def __init__(self):
-        self.display = 0
-        self.error = None
-        self.memory = 0
+        self.display: int | float = 0
+        self.error: str | None = None
+        self.memory: int | float = 0
+        self.trig_mode: str = "Radians"
 
 #----------------
 #Display methods
@@ -77,9 +78,9 @@ class Calculator:
         if self.hasError():
             return self.error
         
-        if not self.isValidNumber(self.display):
-            self.error = self.INVALID_INPUT_ERROR
-            return self.error
+        # if not self.isValidNumber(self.display):
+        #     self.error = self.INVALID_INPUT_ERROR
+        #     return self.error
         
         self.memory += self.display
         self.display = self.memory
@@ -248,6 +249,40 @@ class Calculator:
         
         self.display = -self.display
         return self.display
+    
+    # added Sloanes code 7/12/26 8:07p
+    def square(self, x):
+        if self.hasError():
+            return self.display
+        
+        if not self.isValidNumber(x):
+            self.error = self.INVALID_INPUT_ERROR
+            return self.error
+        
+        try:
+            self.display = x ** 2
+        except OverflowError:
+            self.error = self.OVERFLOW_ERROR
+        return self.getDisplay()
+    
+    def squareroot(self, x):
+        if self.hasError():
+            return self.error
+        
+        if not self.isValidNumber(x):
+            self.error = self.INVALID_INPUT_ERROR
+            return self.error
+        
+        if x < 0:
+            self.error = "Cannot calculate the square root of a negative number"
+            return self.error
+        
+        try:
+            self.display = x ** 0.5
+        except OverflowError:
+            self.error = self.OVERFLOW_ERROR
+        return self.getDisplay()
+
     
 #---------------
 # Utility functions

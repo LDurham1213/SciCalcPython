@@ -1,4 +1,5 @@
 from sciCalc import SciCalc
+import math
 
 def getNumber(message):
 #ask the user for one number.
@@ -20,6 +21,10 @@ def getTwoNumbers():
             print("Error: Please enter valid numbers")
             print()
 
+def getOneNumber():
+    a = float(input("first number? "))
+    return a
+
 def displayResult(result):
     print("Display:", result)
     print()
@@ -32,9 +37,20 @@ def displayMenu():
     print("  subtract    - Subtract a number from the display")
     print("  multiply    - Multiply the display by a number")
     print("  divide      - Divide the display by a number")
+    print("  square      - Raise the display to the second power")
+    print("  squareroot  - Find the square root of the number on display")
     print("  power       - Raise the display to an exponent")
     print("  inverse     - Calculate 1 dividend by the display")
     print("  sign        - Switch the display between positive and negative")
+    # scientific functions
+    print("  mode        - Switch trig units between Degrees and Radians")
+    print("  sine        - Calculate the sine of the number on display")
+    print("  cosine      - Calculate the cosine of the number on display")
+    print("  tangent     - Calculate the tangent of the number on display")
+    print("  asine       - Calculate the inverse sine of the number on display")
+    print("  acosine     - Calculate the inverse cosine of the number on display")
+    print("  atangent    - Calculate the inverse tangent of the number on display")
+    # custom functions
     print("  absolute    - Calculate the absolute value")
     print("  percentage  - Divide the display by 100")
     print("  factorial   - Calculate factorial")
@@ -58,7 +74,7 @@ def performCalcLoop(calc):
     displayMenu()
 
     while True:
-        choice = input("Operation?").strip().lower()
+        choice = input("What do you want to do, pick a function? ").strip().lower()
 
         if choice == "q":
             break # user types q to quit calulator.
@@ -92,6 +108,14 @@ def performCalcLoop(calc):
             x, y = getTwoNumbers()
             displayResult(calc.divide(x, y))
 
+        elif choice == "square":
+            x = getOneNumber()
+            displayResult(calc.square(x))
+
+        elif choice == "squareroot":
+            x = getOneNumber()
+            displayResult(calc.squareroot(x))
+
         elif choice == "power":
             base = getNumber("Base number? ")
             exponent = getNumber("Exponent? ")
@@ -122,6 +146,44 @@ def performCalcLoop(calc):
 
             calc.setDisplay(number)
             displayResult(calc.percentage())
+
+    # scientific functions
+
+        elif choice == "mode":
+            new_mode = calc.switchUnitsMode()
+            print(f"Trig unit mode changed to: {new_mode}")
+            print()
+       
+        elif choice == "sine":
+            number = getNumber("Number? ")
+            calc.setDisplay(number)
+            displayResult(calc.sine())
+
+        elif choice == "cosine":
+            number = getNumber("Number? ")
+            calc.setDisplay(number)
+            displayResult(calc.cosine())
+
+        elif choice == "tangent":
+            number = getNumber("Number? ")
+            calc.setDisplay(number)
+            displayResult(calc.tangent())
+
+        elif choice == "asine":
+            number = getNumber("Number (between -1 and 1)? ")
+            calc.setDisplay(number)
+            displayResult(calc.inverse_sine())
+
+        elif choice == "acosine":
+            number = getNumber("Number (between -1 and 1)? ")
+            calc.setDisplay(number)
+            displayResult(calc.inverse_cosine())
+
+        elif choice == "atangent":
+            number = getNumber("Number (between -1 and 1)? ")
+            calc.setDisplay(number)
+            displayResult(calc.inverse_tangent())
+#----end of scientific 
 
         elif choice == "factorial":
             number = getNumber("Number? ")
