@@ -224,7 +224,7 @@ def performCalcLoop(calc):
             displayResult(calc.temperature_converter(temperature, conversion))
 
         elif choice == "ms":
-            displayResult(calc.memory_story())
+            displayResult(calc.memory_store())
 
         elif choice == "m+":
             displayResult(calc.memory_add())
