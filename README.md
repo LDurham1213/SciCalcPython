@@ -66,9 +66,25 @@
   - Ln (natural logarithm)
   - e<sup>x</sup> (inverse natural logarithm)
 
-
-
 ### Custom Features
+- Tip Calculator
+  allows users to calculate the total cost of a bill including gratuity. 
+
+- Temperature Converter 
+  allows users to convert temperatures between Celsius and Fahrenheit.
+
+These custom features were selected bec they demonstrate the ability to extend the calculator beyond standard mathematical operations while applying real-world problem-solving.  The Tip Calculator provides a practical financial calculation, while the Temperature Converter demonstrates the implementation of mathematical formulas and conditional logic.
+
+### User-Friendly Menu System
+-The app provides an interactive menu that displays all available calculator operations.  Users can simply enter the name of the desired operation rather than remembering commands.  The menu also includes a HELP option to redisplay all available commands at any time, making the calculator easier to navigate and use. 
+
+### Error Handling
+-The calculator validates user input and displays meaningful error messages for invalid operations, including: 
+  - Invalid numeric input
+  - Division by zero
+  - Invalid exponent operations
+  - Invalid mathematical operations
+-The calculator prevents additional operations while an error is displayed until the user clears the error, ensuring consistent and predicatable behavior.
 
 In addition to the Core and Scientific features, you are required to create at least two of your own features for the calculator. They can be any two features that are not already covered and that you can implement as you see fit. These features must be properly tested.
 
@@ -92,4 +108,3 @@ The following functions should take the displayed value (x) and updated it accor
 
 Completed projects should be submitted by submitting a pull request against the [original repository](https://git.zipcode.rocks/Cohort4.2/ZCW-MacroLabs-OOP-ScientificCalculator). All work should be done in your own repository.
 
-sloane was here
